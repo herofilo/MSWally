@@ -1,0 +1,29 @@
+<movieSummary>
+  <serialVersionID>10</serialVersionID>
+  <createdWithMoviestormBuild>Moviestorm 1.7.1 release 31028, 07/09/15</createdWithMoviestormBuild>
+  <savedWithMoviestormBuild>Moviestorm 1.7.1 release 31028, 07/09/15</savedWithMoviestormBuild>
+  <hasSetProblems>true</hasSetProblems>
+  <hasCharacterProblems>true</hasCharacterProblems>
+  <hasSceneProblems>false</hasSceneProblems>
+  <hasTutorial>false</hasTutorial>
+  <personnel>
+    <personnel>
+      <entry>
+        <string>Director</string>
+        <vector>
+          <mscope.things.Credits_-Contributor>
+            <role>Director</role>
+            <name>jamoram62</name>
+          </mscope.things.Credits_-Contributor>
+        </vector>
+      </entry>
+    </personnel>
+  </personnel>
+  <addOnsUsed>
+    <addonentry>
+      <name>Core</name>
+      <publisher>ShortFuze</publisher>
+      <friendly>Core</friendly>
+    </addonentry>
+  </addOnsUsed>
+</movieSummary>

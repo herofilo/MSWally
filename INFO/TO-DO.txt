@@ -1,0 +1,18 @@
+
+MSWally - TO-DO
+---------------
+
+- Create git
+- Floor size - Si no puede de floor, bien:
+	- buscar en alt
+		<scene> -> <floor reference="path"
+		<parent class="floor">
+
+- Select chained
+- User Guide
+- README
+
+
+
+
+
