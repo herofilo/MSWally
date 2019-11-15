@@ -1,9 +1,0 @@
-<movie>
-  <scenario class="mscope.ui.scenario.GeneralScenario"/>
-  <scenarioProperties>
-      <entry>
-          <string>huds</string>
-          <string>Data/Scenario/GeneralScenario</string>
-      </entry>
-  </scenarioProperties>
-</movie>
