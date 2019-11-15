@@ -6,7 +6,7 @@ Last Update: 2019/11/15
 A little tool for hacking the walls in a set of the scenes in a Moviestorm movie description file, including:
 	- Height of selected walls
 	- Thickness of selected walls
-	- Z-Offset of selected walls, for creating tilted walls
+	- Z-Offset of selected walls, for creating skewed and raised walls
 
 
 WHAT'S NEW:
@@ -23,7 +23,7 @@ Microsoft .NET runtime version 4.x must be installed for the application to be p
 
 HOW TO USE:
 ----------
-Please refer to the User Guide (when available).
+Please refer to the User Guide.
 
 
 KNOWN ISSUES:

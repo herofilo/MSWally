@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlWorld = new System.Windows.Forms.Panel();
             this.dgvWalls = new System.Windows.Forms.DataGridView();
@@ -62,7 +62,7 @@
             this.cmiWallSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMovie = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbSceneSelector = new System.Windows.Forms.ComboBox();
             this.opdMoviescopeLoad = new System.Windows.Forms.OpenFileDialog();
@@ -122,8 +122,8 @@
             // 
             this.colStartX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colStartX.DataPropertyName = "StartX";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStartX.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStartX.DefaultCellStyle = dataGridViewCellStyle1;
             this.colStartX.HeaderText = "StartX";
             this.colStartX.Name = "colStartX";
             this.colStartX.ReadOnly = true;
@@ -134,8 +134,8 @@
             // 
             this.colStartY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colStartY.DataPropertyName = "StartY";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStartY.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStartY.DefaultCellStyle = dataGridViewCellStyle2;
             this.colStartY.HeaderText = "StartY";
             this.colStartY.Name = "colStartY";
             this.colStartY.ReadOnly = true;
@@ -146,8 +146,8 @@
             // 
             this.colEndX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colEndX.DataPropertyName = "EndX";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colEndX.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colEndX.DefaultCellStyle = dataGridViewCellStyle3;
             this.colEndX.HeaderText = "EndX";
             this.colEndX.Name = "colEndX";
             this.colEndX.ReadOnly = true;
@@ -158,8 +158,8 @@
             // 
             this.colEndY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colEndY.DataPropertyName = "EndY";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colEndY.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colEndY.DefaultCellStyle = dataGridViewCellStyle4;
             this.colEndY.HeaderText = "EndY";
             this.colEndY.Name = "colEndY";
             this.colEndY.ReadOnly = true;
@@ -170,8 +170,8 @@
             // 
             this.colHeight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colHeight.DataPropertyName = "Height";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colHeight.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colHeight.DefaultCellStyle = dataGridViewCellStyle5;
             this.colHeight.HeaderText = "Height";
             this.colHeight.Name = "colHeight";
             this.colHeight.ReadOnly = true;
@@ -182,8 +182,8 @@
             // 
             this.colThickness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colThickness.DataPropertyName = "Thickness";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colThickness.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colThickness.DefaultCellStyle = dataGridViewCellStyle6;
             this.colThickness.HeaderText = "Thickness";
             this.colThickness.Name = "colThickness";
             this.colThickness.ReadOnly = true;
@@ -194,10 +194,10 @@
             // 
             this.colStartZOffs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colStartZOffs.DataPropertyName = "StartZOffset";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "N1";
-            dataGridViewCellStyle17.NullValue = null;
-            this.colStartZOffs.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N1";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colStartZOffs.DefaultCellStyle = dataGridViewCellStyle7;
             this.colStartZOffs.HeaderText = "Start ZOffs";
             this.colStartZOffs.Name = "colStartZOffs";
             this.colStartZOffs.ReadOnly = true;
@@ -208,10 +208,10 @@
             // 
             this.colEndZOffs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colEndZOffs.DataPropertyName = "EndZOffset";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N1";
-            dataGridViewCellStyle18.NullValue = null;
-            this.colEndZOffs.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N1";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colEndZOffs.DefaultCellStyle = dataGridViewCellStyle8;
             this.colEndZOffs.HeaderText = "End ZOffs";
             this.colEndZOffs.Name = "colEndZOffs";
             this.colEndZOffs.ReadOnly = true;
@@ -222,10 +222,10 @@
             // 
             this.colLength.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colLength.DataPropertyName = "Length";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "N1";
-            dataGridViewCellStyle19.NullValue = null;
-            this.colLength.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N1";
+            dataGridViewCellStyle9.NullValue = null;
+            this.colLength.DefaultCellStyle = dataGridViewCellStyle9;
             this.colLength.HeaderText = "Length";
             this.colLength.Name = "colLength";
             this.colLength.ReadOnly = true;
@@ -246,10 +246,10 @@
             // 
             this.colAngle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colAngle.DataPropertyName = "Argument";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.Format = "N1";
-            dataGridViewCellStyle20.NullValue = null;
-            this.colAngle.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N1";
+            dataGridViewCellStyle10.NullValue = null;
+            this.colAngle.DefaultCellStyle = dataGridViewCellStyle10;
             this.colAngle.HeaderText = "Angle";
             this.colAngle.Name = "colAngle";
             this.colAngle.ReadOnly = true;
@@ -327,14 +327,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Walls:";
             // 
-            // label3
+            // lblMovie
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Movie:";
+            this.lblMovie.AutoSize = true;
+            this.lblMovie.Location = new System.Drawing.Point(12, 17);
+            this.lblMovie.Name = "lblMovie";
+            this.lblMovie.Size = new System.Drawing.Size(39, 13);
+            this.lblMovie.TabIndex = 4;
+            this.lblMovie.Text = "Movie:";
             // 
             // label4
             // 
@@ -509,7 +509,7 @@
             this.Controls.Add(this.tbMovieName);
             this.Controls.Add(this.cbSceneSelector);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMovie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvWalls);
@@ -533,7 +533,7 @@
         private System.Windows.Forms.DataGridView dgvWalls;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMovie;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbSceneSelector;
         private System.Windows.Forms.OpenFileDialog opdMoviescopeLoad;

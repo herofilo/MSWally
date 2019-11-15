@@ -1,4 +1,4 @@
-﻿#define TESTING
+﻿// #define TESTING
 
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace MSWally
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Text = $@"Wally     (version {Utils.Utils.GetExecutableVersion()})";
+            Text = $@"Wally - The Moviestorm's Wall Hacking Tool     (version {Utils.Utils.GetExecutableVersion()})";
 
             InitializationChores();
         }
@@ -117,7 +117,7 @@ namespace MSWally
 
             Wall.HeightMinimum = _configuration.HeightMinimum;
             Wall.HeightMaximum = _configuration.HeightMaximum;
-            Wall.ThicknessMinimum = _configuration.ThicknessMaximum;
+            Wall.ThicknessMinimum = _configuration.ThicknessMinimum;
             Wall.ThicknessMaximum = _configuration.ThicknessMaximum;
             Wall.ZOffsetMaximum = _configuration.ZOffsetMaximum;
 
@@ -130,6 +130,7 @@ namespace MSWally
         private void pbLoadMovie_Click(object sender, EventArgs e)
         {
             opdMoviescopeLoad.InitialDirectory = _lastDirectory;
+            opdMoviescopeLoad.FileName = "";
             if (opdMoviescopeLoad.ShowDialog(this) != DialogResult.OK)
                 return;
 
@@ -163,7 +164,7 @@ namespace MSWally
                 return false;
             }
 
-
+            lblMovie.ForeColor = Color.Black;
             tbMovieName.Text = movieDescriptor.MovieName;
             _formToolTip.SetToolTip(tbMovieName, movieDescriptor.FilePath);
 
@@ -313,6 +314,9 @@ namespace MSWally
                 }
             }
 
+            if (scene.Dirty)
+                lblMovie.ForeColor = Color.Red;
+
             RefreshWallTable();
         }
 
@@ -355,6 +359,8 @@ namespace MSWally
 
             _worldGraph = new WorldGraph(pnlWorld, scene);
             _worldGraph.RedrawWorld(new List<int>() { 0 });
+            if(!_worldGraph.CanDraw)
+                tbLog.AppendText($"NOTE: Scene set can't be represented: {_worldGraph.CantDrawReason}\n");
         }
 
 
@@ -409,6 +415,9 @@ namespace MSWally
                 tbLog.AppendText($"Saving Error: {errorText}\n");
             }
 
+            lblMovie.ForeColor = Color.Black;
+            _movieDescriptor.SetClean();
+
             RefreshWallTable();
         }
 
@@ -429,7 +438,12 @@ namespace MSWally
                 tbLog.AppendText($"Saving Error: {errorText}\n");
             }
 
-            RefreshWallTable();
+            LoadMovieDescriptor(sfdMoviescopeSave.FileName);
+
+            // lblMovie.ForeColor = Color.Black;
+            // _movieDescriptor.SetClean();
+
+            // RefreshWallTable();
         }
 
 

@@ -39,6 +39,8 @@ namespace MSWally.UI
 
         public bool CanDraw { get; private set; }
 
+        public string CantDrawReason { get; private set; }
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
         public WorldGraph(Panel pCanvas, Scene pScene)
@@ -46,15 +48,51 @@ namespace MSWally.UI
             _canvas = pCanvas;
             _scene = pScene;
 
-            CanDraw = ((_canvas != null) && (_scene != null) && (_scene.SetDepth > 0) && (_scene.SetWidth > 0));
+            CanDraw = CanbeDrawn();
             if (!CanDraw)
+            {
+                Clear();
                 return;
+            }
 
             _xScale = _canvas.Width / _scene.SetWidth;
             _yScale = _canvas.Height / _scene.SetDepth;
             _xOffset = _xScale * (_scene.SetWidth / 2);
             _yOffset = _yScale * (_scene.SetDepth / 2);
         }
+
+
+        private bool CanbeDrawn()
+        {
+            if (_canvas == null)
+            {
+                CantDrawReason = "No canvas defined";
+                return false;
+            }
+
+            if (_scene == null)
+            {
+                CantDrawReason = "No scene to draw";
+                return false;
+            }
+
+            if ((_scene.SetDepth <= 0) || (_scene.SetWidth <= 0))
+            {
+                CantDrawReason = "Scene dimensions not determined";
+                return false;
+            }
+
+            if ((_scene.SetDepth > _canvas.Height) || (_scene.SetWidth > _canvas.Width))
+            {
+                CantDrawReason = $"Scene dimensions larger than maximum allowable ({_canvas.Width}x{_canvas.Height})";
+                return false;
+            }
+
+            CantDrawReason = null;
+
+            return true;
+        }
+
 
 
         public void Clear()

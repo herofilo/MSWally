@@ -173,10 +173,10 @@ namespace MSWally.Domain
 
             int maxCoord = Math.Max(Math.Abs(minX), Math.Abs(maxX));
             maxCoord = Math.Max(Math.Max(maxCoord, Math.Abs(minY)), Math.Abs(maxY));
-            if (maxCoord <= 24)
+            if (maxCoord <= 25)
                 return worldSize;
 
-            if ((maxCoord > 24) && (maxCoord < 99))
+            if ((maxCoord > 25) && (maxCoord < 50))
                 worldSize = 100;
             else
             {

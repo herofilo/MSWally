@@ -94,6 +94,9 @@
     <EmbeddedResource Include="WallAlterForm.resx">
       <DependentUpon>WallAlterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MSWally - User%27s Guide.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
