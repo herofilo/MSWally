@@ -15,7 +15,7 @@ namespace MSWally.Domain
 
         public const decimal HeightMinimumDefault = 3.0M;
 
-        public const decimal HeightMaximumDefault = 12.0M;
+        public const decimal HeightMaximumDefault = 24.0M;
 
         public const decimal ThicknessMinimumDefault = 0.1M;
 

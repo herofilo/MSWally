@@ -1,12 +1,14 @@
 MSWally, by jamoram
 
-Current version: 1.0.0
-Last Update: 2019/11/15
+Current version: 1.1.0
+Last Update: 2019/11/16
 
 A little tool for hacking the walls in a set of the scenes in a Moviestorm movie description file, including:
 	- Height of selected walls
 	- Thickness of selected walls
 	- Z-Offset of selected walls, for creating skewed and raised walls
+
+It also allows you to adjust accordingly the height of the ceiling, on a scene by scene basis.
 
 
 WHAT'S NEW:
@@ -43,5 +45,8 @@ Suggestions for improvements and bug reports can be addressed to the email accou
 
 VERSION HISTORY
 ---------------
-* v1.0.0 (2019/11/15):
-	- First fully functional version, released to public.
+* v1.1.0 (2019/11/16):
+	- First fully functional version, released to public
+
+* v1.0.0 (2019/11/15) [INTERNAL]
+	

@@ -1,8 +1,14 @@
 
 MSWally - Version History
 --------------------------
+* v1.1.0 (2019/11/15):
+	- Added: setting the Scene Ceiling Height
+	- Wall.HeightMaximumDefault increased to 24.0M
+	- Wall Table: preserving selected rows after modifying some of the wall parameters
+	- Documentation updated
 
-* v1.0.0 (2019/11/15):
-	- First fully functional version, released to public.
+* v1.0.0 (2019/11/15) [INTERNAL]:
+	- First (almost) fully functional version.
+
 
 	

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -22,6 +23,12 @@ namespace MSWally.Domain
 
         public List<Wall> SetWalls { get; private set; }
 
+        public decimal SetCeilingHeight { get; private set; }
+
+        private XmlNode SetCeilingNode { get; set; }
+
+        public bool SetCeilingHeightModified { get; private set; }
+
         public XmlNode SceneRootNode { get; private set; }
 
         public string ErrorText { get; private set; }
@@ -30,6 +37,8 @@ namespace MSWally.Domain
         {
             get
             {
+                if (SetCeilingHeightModified)
+                    return true;
                 if (SetWalls == null)
                     return false;
                 foreach (Wall wall in SetWalls)
@@ -68,6 +77,9 @@ namespace MSWally.Domain
             SetWidth = SetDepth = -1;
             SetDimEstimated = false;
 
+            SetCeilingHeight = 0.0M;
+            SetCeilingHeightModified = false;
+
             if (SceneRootNode == null)
             {
                 ErrorText = "No root node";
@@ -96,6 +108,13 @@ namespace MSWally.Domain
                 ErrorText = "No set/scenery node found";
                 return false;
             }
+
+
+            if (!GetCeilingHeight(sceneryNode))
+            {
+                return false;
+            }
+
 
             // bool needsWorldSizeEstimate = false;
             if (!GetWorldSize(sceneryNode, "floor") && !GetWorldSizeAlt() && !GetWorldSize(sceneryNode, "ceiling"))
@@ -130,6 +149,28 @@ namespace MSWally.Domain
             return true;
         }
 
+        private bool GetCeilingHeight(XmlNode pSceneryNode)
+        {
+            XmlNode ceilingNode = pSceneryNode.SelectSingleNode("ceiling");
+            if (ceilingNode == null)
+            {
+                ErrorText = "No ceiling node found";
+                return false;
+            }
+
+            XmlNode ceilingHeightNode = ceilingNode.SelectSingleNode("height");
+            if (ceilingHeightNode == null)
+            {
+                ErrorText = "No ceiling height node found";
+                return false;
+            }
+
+            SetCeilingHeight = Convert.ToDecimal(ceilingHeightNode.InnerText, CultureInfo.InvariantCulture);
+
+            SetCeilingNode = ceilingHeightNode;
+
+            return true;
+        }
 
 
         private int EstimateWorldSize()
@@ -229,12 +270,35 @@ namespace MSWally.Domain
 
         public void SetClean()
         {
+            SetCeilingHeightModified = false;
+
             if ((SetWalls == null) || (!Dirty))
                 return;
 
             foreach (Wall wall in SetWalls)
                 wall.SetClean();
 
+        }
+
+        public decimal UpdateCeilingHeight(decimal pValue)
+        {
+            if (SetCeilingNode == null)
+                return pValue;
+
+            if (pValue < Wall.HeightMinimum)
+                pValue = Wall.HeightMinimum;
+
+            if (pValue > Wall.HeightMaximum)
+                pValue = Wall.HeightMaximum;
+            if (pValue == SetCeilingHeight)
+                return pValue;
+
+            SetCeilingHeight = pValue;
+            string heightText = $"{pValue:F1}".Replace(",", ".");
+            SetCeilingNode.InnerText = heightText;
+            SetCeilingHeightModified = true;
+
+            return SetCeilingHeight;
         }
     }
 }

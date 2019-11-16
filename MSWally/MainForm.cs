@@ -1,4 +1,4 @@
-﻿// #define TESTING
+﻿#define TESTING
 
 using System;
 using System.Collections.Generic;
@@ -29,6 +29,10 @@ namespace MSWally
         private string _lastDirectory;
 
         private ToolTip _formToolTip;
+
+        private List<int> _selectedWalls = new List<int>();
+
+        private bool _resetSelectedWalls = true;
 
         // --------------------------------------------------------------------------------
 
@@ -73,6 +77,8 @@ namespace MSWally
             _formToolTip.SetToolTip(pbSetup, "Adjust settings of the application");
             _formToolTip.SetToolTip(pbRestore, "Restore original file from backup and reload");
             _formToolTip.SetToolTip(pbDeleteBackup, "Delete any backup file");
+            _formToolTip.SetToolTip(nudCeilingHeight, "Height of the ceiling of the current scene");
+            _formToolTip.SetToolTip(pbSetCeilingHeight, "Update the height of the ceiling of the current scene");
         }
 
 
@@ -107,6 +113,8 @@ namespace MSWally
             string errorText;
             _configuration = new ApplicationConfiguration();
             _configuration.Save(ApplicationConfiguration.ConfigurationFilePath, out errorText);
+            nudCeilingHeight.Minimum = Wall.HeightMinimum;
+            nudCeilingHeight.Maximum = Wall.HeightMaximum;
         }
 
 
@@ -120,6 +128,9 @@ namespace MSWally
             Wall.ThicknessMinimum = _configuration.ThicknessMinimum;
             Wall.ThicknessMaximum = _configuration.ThicknessMaximum;
             Wall.ZOffsetMaximum = _configuration.ZOffsetMaximum;
+
+            nudCeilingHeight.Minimum = Wall.HeightMinimum;
+            nudCeilingHeight.Maximum = Wall.HeightMaximum;
 
             RedrawWorld();
         }
@@ -177,6 +188,9 @@ namespace MSWally
 
             cbSceneSelector.SelectedIndex = 0;
 
+            _selectedWalls.Clear();
+            _selectedWalls.Add(0);
+
             _movieDescriptor = movieDescriptor;
 
             RefreshSceneUIData();
@@ -216,7 +230,14 @@ namespace MSWally
 
             dgvWalls.DataSource = source;
 
-
+            /*
+            int index = 0;
+            foreach (DataGridViewRow row in dgvWalls.Rows)
+            {
+                row.Selected = (_selectedWalls.Contains(index));
+                index++;
+            }
+            */
         }
 
         private void dgvWalls_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -224,6 +245,7 @@ namespace MSWally
             if (dgvWalls.RowCount == 0)
                 return;
 
+            dgvWalls.CurrentCell = dgvWalls.Rows[_selectedWalls[0]].Cells[0];
             Scene scene = _movieDescriptor.Scenes[cbSceneSelector.SelectedIndex];
             for (int index = 0; index < scene.SetWalls.Count; ++index)
             {
@@ -241,13 +263,21 @@ namespace MSWally
                 if (scene.SetWalls[index].EndZOffsetModified)
                     dgvWalls.Rows[index].Cells["colEndZOffs"].Style.ForeColor = Color.Red;
 
-
+                dgvWalls.Rows[index].Selected = _selectedWalls.Contains(index);
             }
-
+            
         }
 
         private void dgvWalls_SelectionChanged(object sender, EventArgs e)
         {
+            if (_resetSelectedWalls)
+            {
+                _selectedWalls.Clear();
+                for (int index = 0; index < dgvWalls.RowCount; ++index)
+                    if (dgvWalls.Rows[index].Selected)
+                        _selectedWalls.Add(index);
+            }
+
             RedrawWorld();
         }
 
@@ -317,7 +347,9 @@ namespace MSWally
             if (scene.Dirty)
                 lblMovie.ForeColor = Color.Red;
 
+            _resetSelectedWalls = false;
             RefreshWallTable();
+            _resetSelectedWalls = true;
         }
 
 
@@ -325,6 +357,29 @@ namespace MSWally
         {
             foreach (DataGridViewRow row in dgvWalls.Rows)
                 row.Selected = true;
+        }
+
+
+        private void pbSetCeilingHeight_Click(object sender, EventArgs e)
+        {
+            if ((_movieDescriptor == null) || ((_movieDescriptor.Scenes?.Count ?? 0) == 0))
+                return;
+
+            decimal value = nudCeilingHeight.Value;
+
+            if ((value < _configuration.HeightMinimum) || (value > _configuration.HeightMaximum))
+            {
+                nudCeilingHeight.Focus();
+                return;
+            }
+
+            Scene scene = _movieDescriptor.Scenes[cbSceneSelector.SelectedIndex];
+
+            decimal valueSet = scene.UpdateCeilingHeight(value);
+            if (value != valueSet)
+                nudCeilingHeight.Value = valueSet;
+
+            nudCeilingHeight.ForeColor = scene.SetCeilingHeightModified ? Color.Red : Color.Black;
         }
 
 
@@ -343,6 +398,9 @@ namespace MSWally
 
             Scene scene = _movieDescriptor.Scenes[cbSceneSelector.SelectedIndex];
 
+            nudCeilingHeight.Value = scene.SetCeilingHeight;
+            nudCeilingHeight.ForeColor = (scene.SetCeilingHeightModified) ? Color.Red : Color.Black;
+
             string estimated = scene.SetDimEstimated ? " (estimated)" : "";
             lblSetSize.Text = $"{scene.SetWidth}x{scene.SetDepth}{estimated}";
 
@@ -354,6 +412,9 @@ namespace MSWally
                 lblSceneCount.Text = $"({sceneCount} scenes)";
                 lblSceneCount.Visible = true;
             }
+
+            _selectedWalls.Clear();
+            _selectedWalls.Add(0);
             
             RefreshWallTable();
 

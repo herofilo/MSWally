@@ -26,6 +26,7 @@ namespace MSWally
 
         private void WallAlterForm_Load(object sender, EventArgs e)
         {
+            tbWarning.Visible = false;
             switch (_wallSetting)
             {
                 case WallSetting.Height: 
@@ -35,6 +36,7 @@ namespace MSWally
                     nudIncrement.Minimum = -3.0M;
                     nudIncrement.Increment = 1.0M;
                     nudIncrement.Maximum = 3.0M;
+                    tbWarning.Visible = true;
                     break;
                 case WallSetting.Thickness:
                     this.Text = "Increase/Decrease Wall Thickness";

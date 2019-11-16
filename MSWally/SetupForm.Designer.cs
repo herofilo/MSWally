@@ -30,32 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetupForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudGraphTolerance = new System.Windows.Forms.NumericUpDown();
             this.nudGraphWallThickness = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nudWallHeightMin = new System.Windows.Forms.NumericUpDown();
-            this.nudWallHeightMax = new System.Windows.Forms.NumericUpDown();
-            this.nudWallThicknessMax = new System.Windows.Forms.NumericUpDown();
-            this.nudWallThicknessMin = new System.Windows.Forms.NumericUpDown();
+            this.nudGraphTolerance = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nudWallZOffsetMax = new System.Windows.Forms.NumericUpDown();
+            this.nudWallThicknessMax = new System.Windows.Forms.NumericUpDown();
+            this.nudWallHeightMax = new System.Windows.Forms.NumericUpDown();
+            this.nudWallThicknessMin = new System.Windows.Forms.NumericUpDown();
+            this.nudWallHeightMin = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pbSave = new System.Windows.Forms.Button();
             this.pbCancel = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGraphTolerance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGraphWallThickness)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGraphTolerance)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallZOffsetMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMin)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,6 +71,40 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Set Graphics";
+            // 
+            // nudGraphWallThickness
+            // 
+            this.nudGraphWallThickness.Location = new System.Drawing.Point(170, 58);
+            this.nudGraphWallThickness.Name = "nudGraphWallThickness";
+            this.nudGraphWallThickness.Size = new System.Drawing.Size(53, 20);
+            this.nudGraphWallThickness.TabIndex = 3;
+            this.nudGraphWallThickness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // nudGraphTolerance
+            // 
+            this.nudGraphTolerance.Location = new System.Drawing.Point(170, 26);
+            this.nudGraphTolerance.Name = "nudGraphTolerance";
+            this.nudGraphTolerance.Size = new System.Drawing.Size(53, 20);
+            this.nudGraphTolerance.TabIndex = 2;
+            this.nudGraphTolerance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Wall Thickness (px):";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wall Selection Tolerance (px):";
             // 
             // groupBox2
             // 
@@ -90,75 +125,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wall Settings";
             // 
-            // label1
+            // nudWallZOffsetMax
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wall Selection Tolerance (px):";
+            this.nudWallZOffsetMax.Location = new System.Drawing.Point(170, 106);
+            this.nudWallZOffsetMax.Name = "nudWallZOffsetMax";
+            this.nudWallZOffsetMax.Size = new System.Drawing.Size(53, 20);
+            this.nudWallZOffsetMax.TabIndex = 12;
+            this.nudWallZOffsetMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label2
+            // nudWallThicknessMax
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Wall Thickness (px):";
+            this.nudWallThicknessMax.Location = new System.Drawing.Point(170, 72);
+            this.nudWallThicknessMax.Name = "nudWallThicknessMax";
+            this.nudWallThicknessMax.Size = new System.Drawing.Size(53, 20);
+            this.nudWallThicknessMax.TabIndex = 10;
+            this.nudWallThicknessMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // nudGraphTolerance
+            // nudWallHeightMax
             // 
-            this.nudGraphTolerance.Location = new System.Drawing.Point(170, 26);
-            this.nudGraphTolerance.Name = "nudGraphTolerance";
-            this.nudGraphTolerance.Size = new System.Drawing.Size(53, 20);
-            this.nudGraphTolerance.TabIndex = 2;
-            this.nudGraphTolerance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudWallHeightMax.Location = new System.Drawing.Point(170, 40);
+            this.nudWallHeightMax.Name = "nudWallHeightMax";
+            this.nudWallHeightMax.Size = new System.Drawing.Size(53, 20);
+            this.nudWallHeightMax.TabIndex = 8;
+            this.nudWallHeightMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // nudGraphWallThickness
+            // nudWallThicknessMin
             // 
-            this.nudGraphWallThickness.Location = new System.Drawing.Point(170, 58);
-            this.nudGraphWallThickness.Name = "nudGraphWallThickness";
-            this.nudGraphWallThickness.Size = new System.Drawing.Size(53, 20);
-            this.nudGraphWallThickness.TabIndex = 3;
-            this.nudGraphWallThickness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudWallThicknessMin.Location = new System.Drawing.Point(96, 72);
+            this.nudWallThicknessMin.Name = "nudWallThicknessMin";
+            this.nudWallThicknessMin.Size = new System.Drawing.Size(53, 20);
+            this.nudWallThicknessMin.TabIndex = 9;
+            this.nudWallThicknessMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label3
+            // nudWallHeightMin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Height:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Thickness:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Z Offset:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(98, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Minimum:";
+            this.nudWallHeightMin.Location = new System.Drawing.Point(96, 40);
+            this.nudWallHeightMin.Name = "nudWallHeightMin";
+            this.nudWallHeightMin.Size = new System.Drawing.Size(53, 20);
+            this.nudWallHeightMin.TabIndex = 7;
+            this.nudWallHeightMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
@@ -169,45 +174,41 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Maximum:";
             // 
-            // nudWallHeightMin
+            // label6
             // 
-            this.nudWallHeightMin.Location = new System.Drawing.Point(96, 40);
-            this.nudWallHeightMin.Name = "nudWallHeightMin";
-            this.nudWallHeightMin.Size = new System.Drawing.Size(53, 20);
-            this.nudWallHeightMin.TabIndex = 7;
-            this.nudWallHeightMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(98, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Minimum:";
             // 
-            // nudWallHeightMax
+            // label5
             // 
-            this.nudWallHeightMax.Location = new System.Drawing.Point(170, 40);
-            this.nudWallHeightMax.Name = "nudWallHeightMax";
-            this.nudWallHeightMax.Size = new System.Drawing.Size(53, 20);
-            this.nudWallHeightMax.TabIndex = 8;
-            this.nudWallHeightMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Z Offset:";
             // 
-            // nudWallThicknessMax
+            // label4
             // 
-            this.nudWallThicknessMax.Location = new System.Drawing.Point(170, 72);
-            this.nudWallThicknessMax.Name = "nudWallThicknessMax";
-            this.nudWallThicknessMax.Size = new System.Drawing.Size(53, 20);
-            this.nudWallThicknessMax.TabIndex = 10;
-            this.nudWallThicknessMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Thickness:";
             // 
-            // nudWallThicknessMin
+            // label3
             // 
-            this.nudWallThicknessMin.Location = new System.Drawing.Point(96, 72);
-            this.nudWallThicknessMin.Name = "nudWallThicknessMin";
-            this.nudWallThicknessMin.Size = new System.Drawing.Size(53, 20);
-            this.nudWallThicknessMin.TabIndex = 9;
-            this.nudWallThicknessMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // nudWallZOffsetMax
-            // 
-            this.nudWallZOffsetMax.Location = new System.Drawing.Point(170, 106);
-            this.nudWallZOffsetMax.Name = "nudWallZOffsetMax";
-            this.nudWallZOffsetMax.Size = new System.Drawing.Size(53, 20);
-            this.nudWallZOffsetMax.TabIndex = 12;
-            this.nudWallZOffsetMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Height (*):";
             // 
             // pbSave
             // 
@@ -230,13 +231,23 @@
             this.pbCancel.UseVisualStyleBackColor = true;
             this.pbCancel.Click += new System.EventHandler(this.pbCancel_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 286);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(228, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "(*) It also applies to the Height of Scene Ceiling";
+            // 
             // SetupForm
             // 
             this.AcceptButton = this.pbSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.pbCancel;
-            this.ClientSize = new System.Drawing.Size(370, 280);
+            this.ClientSize = new System.Drawing.Size(364, 307);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pbCancel);
             this.Controls.Add(this.pbSave);
             this.Controls.Add(this.groupBox2);
@@ -249,16 +260,17 @@
             this.Load += new System.EventHandler(this.SetupForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGraphWallThickness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGraphTolerance)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGraphTolerance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGraphWallThickness)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallZOffsetMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallThicknessMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWallHeightMin)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +294,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button pbSave;
         private System.Windows.Forms.Button pbCancel;
+        private System.Windows.Forms.Label label8;
     }
 }

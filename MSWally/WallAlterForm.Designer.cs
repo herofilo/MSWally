@@ -32,6 +32,7 @@
             this.nudIncrement = new System.Windows.Forms.NumericUpDown();
             this.pbUpdate = new System.Windows.Forms.Button();
             this.pbCancel = new System.Windows.Forms.Button();
+            this.tbWarning = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudIncrement)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             // pbUpdate
             // 
-            this.pbUpdate.Location = new System.Drawing.Point(113, 69);
+            this.pbUpdate.Location = new System.Drawing.Point(119, 109);
             this.pbUpdate.Name = "pbUpdate";
             this.pbUpdate.Size = new System.Drawing.Size(75, 23);
             this.pbUpdate.TabIndex = 2;
@@ -66,7 +67,7 @@
             // pbCancel
             // 
             this.pbCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.pbCancel.Location = new System.Drawing.Point(194, 69);
+            this.pbCancel.Location = new System.Drawing.Point(200, 109);
             this.pbCancel.Name = "pbCancel";
             this.pbCancel.Size = new System.Drawing.Size(75, 23);
             this.pbCancel.TabIndex = 3;
@@ -74,13 +75,28 @@
             this.pbCancel.UseVisualStyleBackColor = true;
             this.pbCancel.Click += new System.EventHandler(this.pbCancel_Click);
             // 
+            // tbWarning
+            // 
+            this.tbWarning.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbWarning.ForeColor = System.Drawing.Color.Red;
+            this.tbWarning.Location = new System.Drawing.Point(21, 54);
+            this.tbWarning.Multiline = true;
+            this.tbWarning.Name = "tbWarning";
+            this.tbWarning.ReadOnly = true;
+            this.tbWarning.Size = new System.Drawing.Size(248, 49);
+            this.tbWarning.TabIndex = 23;
+            this.tbWarning.Text = "PLEASE NOTE that the ceiling height is set globally on a scene set basis, and it " +
+    "should be set accordingly with wall height in the set";
+            this.tbWarning.Visible = false;
+            // 
             // WallAlterForm
             // 
             this.AcceptButton = this.pbUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.pbCancel;
-            this.ClientSize = new System.Drawing.Size(283, 113);
+            this.ClientSize = new System.Drawing.Size(283, 140);
+            this.Controls.Add(this.tbWarning);
             this.Controls.Add(this.pbCancel);
             this.Controls.Add(this.pbUpdate);
             this.Controls.Add(this.nudIncrement);
@@ -101,5 +117,6 @@
         private System.Windows.Forms.NumericUpDown nudIncrement;
         private System.Windows.Forms.Button pbUpdate;
         private System.Windows.Forms.Button pbCancel;
+        private System.Windows.Forms.TextBox tbWarning;
     }
 }

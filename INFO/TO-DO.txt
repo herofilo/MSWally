@@ -1,6 +1,10 @@
 
 MSWally - TO-DO
 ---------------
+- Draw ceiling tiles (rectángulos amarillos)
+
+- Before saving check ceiling height matches wall height
+
 - Floor size - Si no puede de floor, bien:
 	- buscar en alt
 		<scene> -> <floor reference="path"
